@@ -1,0 +1,154 @@
+{
+  "metadata": {
+    "title": "Bamboo Leaf Studios: アプリ、ゲーム＆デジタル体験",
+    "description": "ミニマルなデザインとシームレスなインタラクションで、優れたモバイルアプリ、ゲーム、デジタル体験を創造します。"
+  },
+  "nav": {
+    "about": "私たちについて",
+    "services": "サービス",
+    "process": "プロセス",
+    "work": "実績",
+    "contact": "お問い合わせ"
+  },
+  "hero": {
+    "label": "アプリ＆ゲームスタジオ",
+    "title": "余計を削ぎ、もっと",
+    "rotating": {
+      "0": "意図を。",
+      "1": "意味を。",
+      "2": "明確さを。",
+      "3": "影響力を。",
+      "4": "存在感を。"
+    },
+    "subtitle": "卓越したデザイン、滑らかさ、ミニマリズムで際立つモバイルアプリ、ゲーム、デジタル体験を創造します。",
+    "cta_primary": "実績を見る",
+    "cta_secondary": "お問い合わせ"
+  },
+  "about": {
+    "label": "私たちについて",
+    "title_line1": "すべてのピクセルに意味がある。",
+    "title_line2": "すべてのインタラクションが大切。",
+    "description_1": "Bamboo Leaf Studiosはメキシコシティを拠点とする開発スタジオです。デジタル体験は機能的であるだけでなく、心から楽しめるものであるべきだという信念のもとに設立されました。音楽目覚まし時計からリキッドオーディオビジュアライザーまで、日常のコンセプトを卓越したデザインで再発明しています。",
+    "description_2": "私たちのミッションは、すべての製品においてユーザー体験、流動性、ミニマリズムを優先した、没入型でインタラクティブなデジタル体験を創造することです。",
+    "values": {
+      "design_first": {
+        "title": "デザインファースト",
+        "description": "すべてのピクセルに意図があり、すべての操作が直感的です。"
+      },
+      "user_experience": {
+        "title": "ユーザー体験",
+        "description": "便利なだけでなく、使って楽しいアプリを。"
+      },
+      "innovation": {
+        "title": "イノベーション",
+        "description": "既存のコンセプトに独自性を。"
+      },
+      "minimalism": {
+        "title": "機能的ミニマリズム",
+        "description": "正しく行えば、少ないほど豊かになる。"
+      }
+    }
+  },
+  "services": {
+    "label": "サービス内容",
+    "title": "サービス",
+    "game_dev": {
+      "title": "ゲーム開発",
+      "description": "Unity3Dで構築されたカジュアルゲーム、パズル、インタラクティブなアート体験。最初のタップから魅了するデザイン。",
+      "tag": "Unity3D"
+    },
+    "app_dev": {
+      "title": "アプリ開発",
+      "description": "プレミアムな美しさとシームレスなパフォーマンスで日常のツールを再構築するクロスプラットフォームモバイルアプリケーション。",
+      "tag": "Flutter"
+    },
+    "web_dev": {
+      "title": "Web開発",
+      "description": "最新技術で構築されたモダンでレスポンシブなウェブサイトとウェブアプリケーション。高速でエレガント。",
+      "tag": "Next.js"
+    },
+    "consulting": {
+      "title": "B2Bコンサルティング",
+      "description": "卓越を求める企業向けのカスタムアプリ開発、技術コンサルティング、エンドツーエンドのプロジェクトデリバリー。",
+      "tag": "カスタムソリューション"
+    }
+  },
+  "process": {
+    "label": "ワークフロー",
+    "title": "開発プロセス",
+    "steps": {
+      "ideation": {
+        "title": "アイデア創出",
+        "description": "コンセプトを探求し、市場を調査し、プロダクトのビジョンを定義します。"
+      },
+      "prototype": {
+        "title": "プロトタイプ",
+        "description": "ラピッドプロトタイピングでアイデアを検証し、早い段階でユーザー体験を確立します。"
+      },
+      "production": {
+        "title": "プロダクション",
+        "description": "デザイン品質とパフォーマンスへのこだわりを持った本格的な開発。"
+      },
+      "launch": {
+        "title": "ローンチ",
+        "description": "戦略的なリリース、ローンチ後のイテレーション、データに基づく継続的な改善。"
+      }
+    }
+  },
+  "portfolio": {
+    "label": "実績紹介",
+    "title": "ポートフォリオ",
+    "badge_live": "公開中",
+    "link_app_store": "App Storeでダウンロード",
+    "link_website": "ウェブサイトを見る",
+    "projects": {
+      "liquid-piano": {
+        "name": "Liquid Piano",
+        "tagline": "リラクシング・ミュージックメーカー",
+        "description": "タッチを音楽に変える。どこでもタップして、リアルタイムの流体シミュレーション上で美しい音色を奏でましょう。音楽の訓練は不要。ただ音を感じてください。"
+      },
+      "calculadora-aranceles": {
+        "name": "Calculadora de Aranceles",
+        "tagline": "CAM-SAM · B2Bプロジェクト",
+        "description": "メキシコ建築家協会向けのプロフェッショナル報酬計算ツール。プロジェクトの種類、規模、所在地、BIMレベル、18以上の建築カテゴリーに基づいてコストを計算します。"
+      },
+      "notegrid": {
+        "name": "NoteGrid",
+        "tagline": "Wimbo · B2Bプロジェクト",
+        "description": "遊びながら耳を鍛える。メロディーを聴いてグリッド式シーケンサーで再現する、100以上のレベルと毎日の耳トレパズルが楽しめる音楽ゲーム。"
+      },
+      "wimbo": {
+        "name": "Wimbo",
+        "tagline": "Wimbo · B2Bプロジェクト",
+        "description": "音符、コード、リズム、耳トレを含む6つのゲームで楽譜の読み方を学ぶ。広告なし、経験不要、ゲーム感覚で音楽の読み書きが身につく。"
+      },
+      "tapmap": {
+        "name": "Tapmap",
+        "tagline": "インタラクティブ地理学 · B2Bプロジェクト",
+        "description": "国、首都、地理を探索するインタラクティブな3D地球儀。学生、旅行者、地理愛好家のために、超リアルなビジュアル体験で構築されました。"
+      }
+    }
+  },
+  "contact": {
+    "label": "一緒に働きましょう",
+    "title": "プロジェクトをお考えですか？",
+    "description": "モバイルアプリ、ゲーム、ウェブサイト、カスタムソリューション、どんなご相談でもお気軽にどうぞ。",
+    "cta": "お問い合わせ"
+  },
+  "footer": {
+    "tagline": "特別なデジタル体験を創造します。",
+    "nav_title": "ナビゲーション",
+    "connect_title": "つながる",
+    "email": "メール",
+    "instagram": "Instagram",
+    "twitter": "Twitter / X",
+    "linkedin": "LinkedIn",
+    "copyright": "© 2026 Bamboo Leaf Studios. All rights reserved.",
+    "location": "メキシコシティ、メキシコ"
+  },
+  "not_found": {
+    "title": "ページが見つかりません",
+    "description": "お探しのページは存在しないか、移動された可能性があります。",
+    "cta": "ホームに戻る"
+  }
+}

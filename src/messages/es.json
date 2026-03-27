@@ -1,0 +1,154 @@
+{
+  "metadata": {
+    "title": "Bamboo Leaf Studios: Apps, Juegos y Experiencias Digitales",
+    "description": "Creamos aplicaciones móviles, juegos y experiencias digitales excepcionales con diseño minimalista e interacciones fluidas."
+  },
+  "nav": {
+    "about": "Nosotros",
+    "services": "Servicios",
+    "process": "Proceso",
+    "work": "Proyectos",
+    "contact": "Contáctanos"
+  },
+  "hero": {
+    "label": "Estudio de Apps y Juegos",
+    "title": "Menos ruido. Más",
+    "rotating": {
+      "0": "intención.",
+      "1": "significado.",
+      "2": "claridad.",
+      "3": "impacto.",
+      "4": "presencia."
+    },
+    "subtitle": "Creamos aplicaciones móviles, juegos y experiencias digitales que destacan por su diseño excepcional, fluidez y minimalismo.",
+    "cta_primary": "Explora Nuestro Trabajo",
+    "cta_secondary": "Contáctanos"
+  },
+  "about": {
+    "label": "Quiénes Somos",
+    "title_line1": "Cada píxel cuenta.",
+    "title_line2": "Cada interacción importa.",
+    "description_1": "Bamboo Leaf Studios es un estudio de desarrollo con sede en la Ciudad de México, fundado bajo la creencia de que las experiencias digitales no solo deben ser funcionales, sino genuinamente encantadoras. Reinventamos conceptos cotidianos con diseño excepcional, desde alarmas musicales hasta visualizadores de audio líquido.",
+    "description_2": "Nuestra misión es crear experiencias digitales inmersivas e interactivas que prioricen la experiencia de usuario, la fluidez y el minimalismo en cada producto que construimos.",
+    "values": {
+      "design_first": {
+        "title": "Diseño Primero",
+        "description": "Cada píxel es intencional, cada interacción es intuitiva."
+      },
+      "user_experience": {
+        "title": "Experiencia de Usuario",
+        "description": "Apps que no solo son útiles, sino un placer de usar."
+      },
+      "innovation": {
+        "title": "Innovación",
+        "description": "Aportando originalidad a conceptos existentes."
+      },
+      "minimalism": {
+        "title": "Minimalismo Funcional",
+        "description": "Menos es más, cuando se hace bien."
+      }
+    }
+  },
+  "services": {
+    "label": "Qué Hacemos",
+    "title": "Servicios",
+    "game_dev": {
+      "title": "Desarrollo de Juegos",
+      "description": "Juegos casuales, puzzles y experiencias artísticas interactivas construidos con Unity3D. Diseñados para cautivar desde el primer toque.",
+      "tag": "Unity3D"
+    },
+    "app_dev": {
+      "title": "Desarrollo de Apps",
+      "description": "Aplicaciones móviles multiplataforma que reimaginan herramientas cotidianas con estética premium y rendimiento fluido.",
+      "tag": "Flutter"
+    },
+    "web_dev": {
+      "title": "Desarrollo Web",
+      "description": "Sitios web y aplicaciones web modernas y responsivas construidos con las últimas tecnologías. Rápidos, elegantes y diseñados para convertir.",
+      "tag": "Next.js"
+    },
+    "consulting": {
+      "title": "Consultoría B2B",
+      "description": "Desarrollo de aplicaciones a medida, consultoría técnica y entrega de proyectos de principio a fin para empresas que exigen excelencia.",
+      "tag": "Soluciones a Medida"
+    }
+  },
+  "process": {
+    "label": "Cómo Trabajamos",
+    "title": "Nuestro Proceso",
+    "steps": {
+      "ideation": {
+        "title": "Ideación",
+        "description": "Exploramos conceptos, investigamos el mercado y definimos la visión del producto."
+      },
+      "prototype": {
+        "title": "Prototipo",
+        "description": "Prototipado rápido para validar ideas y perfeccionar la experiencia de usuario desde el inicio."
+      },
+      "production": {
+        "title": "Producción",
+        "description": "Desarrollo completo con atención obsesiva a la calidad del diseño y el rendimiento."
+      },
+      "launch": {
+        "title": "Lanzamiento",
+        "description": "Lanzamiento estratégico, iteración post-lanzamiento y mejora continua basada en datos."
+      }
+    }
+  },
+  "portfolio": {
+    "label": "Nuestro Trabajo",
+    "title": "Portafolio",
+    "badge_live": "Activo",
+    "link_app_store": "Descargar en la App Store",
+    "link_website": "Visitar Sitio Web",
+    "projects": {
+      "liquid-piano": {
+        "name": "Liquid Piano",
+        "tagline": "Creador de Música Relajante",
+        "description": "Convierte el toque en música. Toca en cualquier lugar para reproducir notas armoniosas sobre impresionantes simulaciones de fluidos en tiempo real. No se requiere entrenamiento musical — solo siente el sonido."
+      },
+      "calculadora-aranceles": {
+        "name": "Calculadora de Aranceles",
+        "tagline": "CAM-SAM · Proyecto B2B",
+        "description": "Calculadora profesional de honorarios para el Colegio de Arquitectos de México. Calcula costos de proyectos según tipo, alcance, ubicación, niveles BIM y más de 18 categorías arquitectónicas."
+      },
+      "notegrid": {
+        "name": "NoteGrid",
+        "tagline": "Wimbo · Proyecto B2B",
+        "description": "Entrena el oído jugando. Escucha melodías y recréalas en un secuenciador de cuadrícula, con más de 100 niveles de puzzles musicales y ejercicios diarios de entrenamiento auditivo."
+      },
+      "wimbo": {
+        "name": "Wimbo",
+        "tagline": "Wimbo · Proyecto B2B",
+        "description": "Aprende a leer música a través de seis juegos que cubren notas, acordes, ritmo y entrenamiento auditivo. Sin anuncios, sin experiencia previa, solo juega y alcanza la lectura musical."
+      },
+      "tapmap": {
+        "name": "Tapmap",
+        "tagline": "Geografía Interactiva · Proyecto B2B",
+        "description": "Un globo terráqueo 3D interactivo para explorar países, capitales y geografía. Creado para estudiantes, viajeros y entusiastas de la geografía con una experiencia visual ultra realista."
+      }
+    }
+  },
+  "contact": {
+    "label": "Trabajemos Juntos",
+    "title": "¿Tienes un proyecto en mente?",
+    "description": "Ya sea que necesites una app móvil, un juego, un sitio web o una solución a medida: nos encantaría escucharte.",
+    "cta": "Contáctanos"
+  },
+  "footer": {
+    "tagline": "Creando experiencias digitales extraordinarias.",
+    "nav_title": "Navegación",
+    "connect_title": "Conecta",
+    "email": "Correo",
+    "instagram": "Instagram",
+    "twitter": "Twitter / X",
+    "linkedin": "LinkedIn",
+    "copyright": "© 2026 Bamboo Leaf Studios. Todos los derechos reservados.",
+    "location": "Ciudad de México, México"
+  },
+  "not_found": {
+    "title": "Página no encontrada",
+    "description": "La página que buscas no existe o fue movida.",
+    "cta": "Ir al Inicio"
+  }
+}

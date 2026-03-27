@@ -1,0 +1,154 @@
+{
+  "metadata": {
+    "title": "Bamboo Leaf Studios: Apps, Games & Digital Experiences",
+    "description": "We craft exceptional mobile apps, games, and digital experiences with minimalist design and seamless interactions."
+  },
+  "nav": {
+    "about": "About",
+    "services": "Services",
+    "process": "Process",
+    "work": "Work",
+    "contact": "Get in Touch"
+  },
+  "hero": {
+    "label": "App & Game Studio",
+    "title": "Less noise. More",
+    "rotating": {
+      "0": "intention.",
+      "1": "meaning.",
+      "2": "clarity.",
+      "3": "impact.",
+      "4": "presence."
+    },
+    "subtitle": "We craft mobile apps, games, and digital experiences that stand out through exceptional design, fluidity, and minimalism.",
+    "cta_primary": "Explore Our Work",
+    "cta_secondary": "Contact Us"
+  },
+  "about": {
+    "label": "Who We Are",
+    "title_line1": "Every pixel counts.",
+    "title_line2": "Every interaction matters.",
+    "description_1": "Bamboo Leaf Studios is a development studio based in Mexico City, founded on the belief that digital experiences should be not just functional, but genuinely delightful. We reinvent everyday concepts with exceptional design, from musical alarm clocks to liquid audio visualizers.",
+    "description_2": "Our mission is to create immersive, interactive digital experiences that prioritize user experience, fluidity, and minimalism in every product we build.",
+    "values": {
+      "design_first": {
+        "title": "Design First",
+        "description": "Every pixel is intentional, every interaction is intuitive."
+      },
+      "user_experience": {
+        "title": "User Experience",
+        "description": "Apps that are not just useful, but a pleasure to use."
+      },
+      "innovation": {
+        "title": "Innovation",
+        "description": "Bringing originality to existing concepts."
+      },
+      "minimalism": {
+        "title": "Functional Minimalism",
+        "description": "Less is more, when it's done right."
+      }
+    }
+  },
+  "services": {
+    "label": "What We Do",
+    "title": "Services",
+    "game_dev": {
+      "title": "Game Development",
+      "description": "Casual games, puzzles, and interactive artistic experiences built with Unity3D. Designed to captivate from the first tap.",
+      "tag": "Unity3D"
+    },
+    "app_dev": {
+      "title": "App Development",
+      "description": "Cross-platform mobile applications that reimagine everyday tools with premium aesthetics and seamless performance.",
+      "tag": "Flutter"
+    },
+    "web_dev": {
+      "title": "Web Development",
+      "description": "Modern, responsive websites and web applications built with the latest technologies. Fast, elegant, and built to convert.",
+      "tag": "Next.js"
+    },
+    "consulting": {
+      "title": "B2B Consulting",
+      "description": "Custom app development, technical consulting, and end-to-end project delivery for businesses that demand excellence.",
+      "tag": "Custom Solutions"
+    }
+  },
+  "process": {
+    "label": "How We Work",
+    "title": "Our Process",
+    "steps": {
+      "ideation": {
+        "title": "Ideation",
+        "description": "We explore concepts, research the market, and define the vision for the product."
+      },
+      "prototype": {
+        "title": "Prototype",
+        "description": "Rapid prototyping to validate ideas and nail the user experience early."
+      },
+      "production": {
+        "title": "Production",
+        "description": "Full development with obsessive attention to design quality and performance."
+      },
+      "launch": {
+        "title": "Launch",
+        "description": "Strategic release, post-launch iteration, and continuous improvement based on data."
+      }
+    }
+  },
+  "portfolio": {
+    "label": "Our Work",
+    "title": "Portfolio",
+    "badge_live": "Live",
+    "link_app_store": "Download on the App Store",
+    "link_website": "Visit Website",
+    "projects": {
+      "liquid-piano": {
+        "name": "Liquid Piano",
+        "tagline": "Relaxing Music Maker",
+        "description": "Turn touch into music. Tap anywhere to play harmonious notes over stunning real-time fluid simulations. No musical training required — just feel the sound."
+      },
+      "calculadora-aranceles": {
+        "name": "Calculadora de Aranceles",
+        "tagline": "CAM-SAM · B2B Project",
+        "description": "Professional fee calculator for the Colegio de Arquitectos de Mexico. Computes project costs based on type, scope, location, BIM levels, and 18+ architectural categories."
+      },
+      "notegrid": {
+        "name": "NoteGrid",
+        "tagline": "Wimbo · B2B Project",
+        "description": "Train your ear through play. Listen to melodies and recreate them on a grid-based sequencer, with 100+ levels of progressively challenging musical puzzles and daily ear training exercises."
+      },
+      "wimbo": {
+        "name": "Wimbo",
+        "tagline": "Wimbo · B2B Project",
+        "description": "Learn to read music through six game-based exercises covering notes, chords, rhythm, and ear training. No ads, no prior experience needed, just play your way to musical literacy."
+      },
+      "tapmap": {
+        "name": "Tapmap",
+        "tagline": "Interactive Geography · B2B Project",
+        "description": "An interactive 3D globe for exploring countries, capitals, and geography. Built for students, travelers, and geography enthusiasts with an ultra-realistic visual experience."
+      }
+    }
+  },
+  "contact": {
+    "label": "Let's Work Together",
+    "title": "Have a project in mind?",
+    "description": "Whether you need a mobile app, a game, a website, or a custom solution: we'd love to hear about it.",
+    "cta": "Get in Touch"
+  },
+  "footer": {
+    "tagline": "Crafting extraordinary digital experiences.",
+    "nav_title": "Navigation",
+    "connect_title": "Connect",
+    "email": "Email",
+    "instagram": "Instagram",
+    "twitter": "Twitter / X",
+    "linkedin": "LinkedIn",
+    "copyright": "© 2026 Bamboo Leaf Studios. All rights reserved.",
+    "location": "Mexico City, Mexico"
+  },
+  "not_found": {
+    "title": "Page not found",
+    "description": "The page you're looking for doesn't exist or has been moved.",
+    "cta": "Go Home"
+  }
+}

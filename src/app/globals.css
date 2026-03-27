@@ -1,0 +1,64 @@
+@import "tailwindcss";
+
+@theme inline {
+  --font-sans: var(--font-poppins), var(--font-noto-sans-jp), -apple-system,
+    sans-serif;
+
+  --color-surface: var(--surface);
+  --color-surface-alt: var(--surface-alt);
+  --color-surface-dark: var(--surface-dark);
+  --color-card: var(--card);
+  --color-card-border: var(--card-border);
+  --color-foreground: var(--foreground);
+  --color-muted: var(--muted);
+  --color-body: var(--body);
+  --color-accent: var(--accent);
+  --color-accent-hover: var(--accent-hover);
+  --color-badge: var(--badge);
+  --color-badge-border: var(--badge-border);
+  --color-bamboo: var(--bamboo);
+}
+
+:root {
+  --surface: #fafafa;
+  --surface-alt: #f0f0f0;
+  --surface-dark: #1a1a1a;
+  --card: #ffffff;
+  --card-border: #e5e5e5;
+  --foreground: #333333;
+  --muted: #737373;
+  --body: #333333;
+  --accent: #81db99;
+  --accent-hover: #6bc987;
+  --badge: #81db99;
+  --badge-border: rgba(129, 219, 153, 0.3);
+  --bamboo: #81db99;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--surface);
+  color: var(--body);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+}
+
+::selection {
+  background-color: rgba(129, 219, 153, 0.25);
+}
+
+@keyframes scroll-pulse {
+  0%,
+  100% {
+    opacity: 0.3;
+    transform: scaleY(0.6);
+  }
+  50% {
+    opacity: 1;
+    transform: scaleY(1);
+  }
+}

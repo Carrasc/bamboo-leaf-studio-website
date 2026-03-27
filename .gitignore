@@ -1,5 +1,26 @@
+# Dependencies
+node_modules/
+
+# Next.js
+.next/
+out/
+
+# Production
+build/
+
+# Misc
 .DS_Store
 Thumbs.db
 *.swp
 *.swo
-node_modules/
+*.pem
+
+# Debug
+npm-debug.log*
+
+# Env
+.env*.local
+
+# TypeScript
+*.tsbuildinfo
+next-env.d.ts
