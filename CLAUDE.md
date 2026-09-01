@@ -95,6 +95,12 @@ The SVG stretches over the full document with `preserveAspectRatio="none"`, so
 the curve adapts to any page height. It draws itself via framer-motion's
 `pathLength` bound to `useScroll`, and renders complete before hydration.
 
+**It is desktop-only (`max-lg:hidden`).** The meander sweeps between 33% and
+64% of the width, which falls through the margins of the `lg` two-column
+layouts but cuts straight across the copy once those collapse to one column.
+It is hidden in CSS rather than unmounted, so there is no viewport check to
+get wrong at hydration.
+
 ## Drawn art
 
 `src/components/art/` holds `Bamboo`, `Grasses`, `TornEdge`, `Constellation`,

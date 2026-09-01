@@ -40,7 +40,12 @@ export function ScrollThread() {
   return (
     <div
       aria-hidden
-      className="pointer-events-none absolute inset-0 z-[5] select-none"
+      // Desktop only. Below `lg` the two-column sections collapse to a single
+      // full-width column and the meander cuts straight across the copy, so
+      // the thread is dropped there rather than fought with. Hidden in CSS
+      // rather than unmounted, so there is no viewport check to get wrong at
+      // hydration.
+      className="pointer-events-none absolute inset-0 z-[5] select-none max-lg:hidden"
     >
       <svg
         className="h-full w-full"
