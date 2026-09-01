@@ -4,7 +4,7 @@ import { NextIntlClientProvider, hasLocale } from "next-intl";
 import { getMessages, getTranslations, setRequestLocale } from "next-intl/server";
 import { notFound } from "next/navigation";
 import { routing } from "@/i18n/routing";
-import { poppins, notoSansJP } from "@/lib/fonts";
+import { poppins, notoSansJP, plexMono } from "@/lib/fonts";
 import "@/app/globals.css";
 
 export function generateStaticParams() {
@@ -62,8 +62,15 @@ export default async function LocaleLayout({
   const messages = await getMessages();
 
   return (
-    <html lang={locale} className={`${poppins.variable} ${notoSansJP.variable}`}>
-      <body className="font-sans leading-relaxed">
+    <html lang={locale} className={`${poppins.variable} ${notoSansJP.variable} ${plexMono.variable}`}>
+      <head>
+        {/* framer-motion renders these reveals at opacity:0 on the server. If
+            JS never runs, the whole page below the hero would stay blank. */}
+        <noscript>
+          <style>{`[data-reveal]{opacity:1!important;transform:none!important}`}</style>
+        </noscript>
+      </head>
+      <body className="bg-surface font-sans leading-relaxed antialiased">
         <NextIntlClientProvider messages={messages}>
           {children}
         </NextIntlClientProvider>

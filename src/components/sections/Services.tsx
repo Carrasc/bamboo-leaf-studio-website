@@ -1,42 +1,47 @@
 import { getTranslations } from "next-intl/server";
 import { AnimateOnScroll } from "@/components/ui/AnimateOnScroll";
+import { Caption } from "@/components/ui/Caption";
+import { TornEdge } from "@/components/art/TornEdge";
 import { Gamepad2, Smartphone, Code2, Users } from "lucide-react";
 
 const serviceKeys = ["game_dev", "app_dev", "web_dev", "consulting"] as const;
 
-// Inner dividers only — the outer border is handled by the container
-// Grid is 2 cols × 2 rows
+// Inner dividers only — the outer border is handled by the container.
+// Grid is 2 cols × 2 rows.
 const cellBorder = ["border-b sm:border-r", "border-b", "sm:border-r max-sm:border-b", ""];
 
 const serviceIcons: Record<(typeof serviceKeys)[number], React.ReactNode> = {
-  game_dev: <Gamepad2 size={64} strokeWidth={0.75} />,
-  app_dev:  <Smartphone size={64} strokeWidth={0.75} />,
-  web_dev:  <Code2 size={64} strokeWidth={0.75} />,
-  consulting: <Users size={64} strokeWidth={0.75} />,
+  game_dev: <Gamepad2 size={56} strokeWidth={0.6} />,
+  app_dev: <Smartphone size={56} strokeWidth={0.6} />,
+  web_dev: <Code2 size={56} strokeWidth={0.6} />,
+  consulting: <Users size={56} strokeWidth={0.6} />,
 };
 
 export async function Services() {
   const t = await getTranslations("services");
 
   return (
-    <section id="services" className="bg-surface py-32 max-md:py-20">
-      <div className="mx-auto max-w-[1200px] px-6">
+    <section
+      id="services"
+      className="paper-grain relative bg-surface py-32 max-md:py-20"
+    >
+      <TornEdge fill="var(--surface)" variant={1} />
+
+      <div className="relative z-10 mx-auto max-w-[1200px] px-6">
         <AnimateOnScroll>
-          <p className="mb-4 text-xs font-semibold uppercase tracking-[3px] text-accent">
-            {t("label")}
-          </p>
+          <Caption className="mb-6">{t("label")}</Caption>
         </AnimateOnScroll>
         <AnimateOnScroll delay={0.1}>
-          <h2 className="mb-16 max-w-[600px] text-[clamp(2rem,4.5vw,3.25rem)] font-bold leading-[1.1] tracking-[-0.02em] text-foreground">
+          <h2 className="mb-16 max-w-[600px] text-[clamp(2rem,4.5vw,3.25rem)] font-light leading-[1.12] tracking-[-0.03em] text-foreground">
             {t("title")}
           </h2>
         </AnimateOnScroll>
 
         <AnimateOnScroll delay={0.15}>
-          {/* Outer border on all 4 sides; inner dividers set per-cell by index */}
-          <div className="relative border border-card-border">
-
-            {/* Crosshair marks at every grid intersection (3×3 for a 2×2 grid) */}
+          {/* A stitched sampler: one square per discipline, tacked at every
+              intersection. Outer border on all four sides; inner dividers are
+              set per cell by index. */}
+          <div className="relative border border-foreground/15">
             {([0, 1, 2] as const).map((col) =>
               ([0, 1, 2] as const).map((row) => (
                 <span
@@ -49,9 +54,25 @@ export async function Services() {
                     transform: "translate(-50%, -50%)",
                   }}
                 >
-                  <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
-                    <line x1="7" y1="0" x2="7" y2="14" stroke="#c5c5c5" strokeWidth="1.2" />
-                    <line x1="0" y1="7" x2="14" y2="7" stroke="#c5c5c5" strokeWidth="1.2" />
+                  <svg width="15" height="15" viewBox="0 0 15 15" fill="none">
+                    <line
+                      x1="7.5"
+                      y1="0"
+                      x2="7.5"
+                      y2="15"
+                      stroke="var(--vermilion)"
+                      strokeOpacity="0.55"
+                      strokeWidth="1"
+                    />
+                    <line
+                      x1="0"
+                      y1="7.5"
+                      x2="15"
+                      y2="7.5"
+                      stroke="var(--vermilion)"
+                      strokeOpacity="0.55"
+                      strokeWidth="1"
+                    />
                   </svg>
                 </span>
               ))
@@ -61,25 +82,26 @@ export async function Services() {
               {serviceKeys.map((key, i) => (
                 <div
                   key={key}
-                  className={`group flex flex-col p-8 transition-colors duration-300 border-card-border ${cellBorder[i]}`}
+                  className={`group flex flex-col p-10 border-foreground/15 max-md:p-7 ${cellBorder[i]}`}
                 >
-                  {/* Icon watermark — top */}
-                  <div className="mb-6 text-foreground/[0.08] transition-colors duration-300 group-hover:text-foreground/[0.12]">
-                    {serviceIcons[key]}
+                  <div className="mb-8 flex items-start justify-between gap-4">
+                    <span className="font-mono text-xs font-light text-accent/70">
+                      {String(i + 1).padStart(2, "0")}
+                    </span>
+                    <div className="text-foreground/[0.10] transition-colors duration-500 group-hover:text-accent/25">
+                      {serviceIcons[key]}
+                    </div>
                   </div>
 
-                  {/* Content */}
-                  <div>
-                    <h3 className="mb-2 text-xl font-semibold text-foreground">
-                      {t(`${key}.title`)}
-                    </h3>
-                    <p className="mb-4 text-sm leading-relaxed text-muted">
-                      {t(`${key}.description`)}
-                    </p>
-                    <span className="inline-block rounded-full border border-card-border px-3.5 py-1.5 text-xs font-medium tracking-wide text-muted">
-                      {t(`${key}.tag`)}
-                    </span>
-                  </div>
+                  <h3 className="mb-2.5 text-xl font-semibold text-foreground">
+                    {t(`${key}.title`)}
+                  </h3>
+                  <p className="mb-6 max-w-[42ch] text-sm leading-[1.8] text-muted">
+                    {t(`${key}.description`)}
+                  </p>
+                  <span className="mt-auto inline-block w-fit rounded-full border border-foreground/15 px-4 py-1.5 font-mono text-xs font-light lowercase text-muted">
+                    {t(`${key}.tag`)}
+                  </span>
                 </div>
               ))}
             </div>

@@ -107,6 +107,16 @@
         "tagline": "リラクシング・ミュージックメーカー",
         "description": "タッチを音楽に変える。どこでもタップして、リアルタイムの流体シミュレーション上で美しい音色を奏でましょう。音楽の訓練は不要。ただ音を感じてください。"
       },
+      "konohanatei": {
+        "name": "Konohanatei",
+        "tagline": "日本食カフェ・レストラン",
+        "description": "メキシコシティにある家族経営の日本食堂。2004年より丼、うどん、カレー、定食を家庭の味で提供しています。スペイン語・日本語のバイリンガルサイトで、メニュー、モーニング、アクセス情報を掲載。"
+      },
+      "carrasco-arquitectos": {
+        "name": "Carrasco Arquitectos",
+        "tagline": "建築スタジオ · B2Bプロジェクト",
+        "description": "創業40年以上、60件を超える実績を持つメキシコシティの建築・建設事務所のサイト。住宅、オフィス、集合住宅、文化施設、空港という5つの分野を、大判の写真で紹介します。"
+      },
       "calculadora-aranceles": {
         "name": "Calculadora de Aranceles",
         "tagline": "CAM-SAM · B2Bプロジェクト",

@@ -3,6 +3,8 @@
 @theme inline {
   --font-sans: var(--font-poppins), var(--font-noto-sans-jp), -apple-system,
     sans-serif;
+  --font-mono: var(--font-plex-mono), var(--font-noto-sans-jp), ui-monospace,
+    monospace;
 
   --color-surface: var(--surface);
   --color-surface-alt: var(--surface-alt);
@@ -17,22 +19,41 @@
   --color-badge: var(--badge);
   --color-badge-border: var(--badge-border);
   --color-bamboo: var(--bamboo);
+
+  /* Field-journal additions */
+  --color-thread: var(--thread);
+  --color-vermilion: var(--vermilion);
+  --color-sage: var(--sage);
+  --color-indigo-soft: var(--indigo-soft);
+  --color-ink-faint: var(--ink-faint);
 }
 
 :root {
-  --surface: #fafafa;
-  --surface-alt: #f0f0f0;
-  --surface-dark: #1a1a1a;
-  --card: #ffffff;
-  --card-border: #e5e5e5;
-  --foreground: #333333;
-  --muted: #737373;
-  --body: #333333;
-  --accent: #81db99;
-  --accent-hover: #6bc987;
-  --badge: #81db99;
-  --badge-border: rgba(129, 219, 153, 0.3);
-  --bamboo: #81db99;
+  /* Paper grounds — the torn bands the page scrolls through */
+  --surface: #f4efe2;      /* cream paper */
+  --surface-alt: #ead9d0;  /* dusty blush */
+  --surface-dark: #26231f; /* ink night */
+  --sage: #d7dec9;         /* pressed-leaf green band */
+
+  --card: #fbf7ec;
+  --card-border: #d8cfbc;
+
+  --foreground: #2b2822;
+  --muted: #6e675c;
+  --body: #2b2822;
+  --ink-faint: rgba(43, 40, 34, 0.14);
+
+  /* Bamboo green, deepened to an ink-wash tone that actually passes contrast */
+  --accent: #4e6742;
+  --accent-hover: #3e5335;
+  --badge: #4e6742;
+  --badge-border: rgba(78, 103, 66, 0.32);
+  --bamboo: #4e6742;
+
+  /* The thread that runs the length of the page */
+  --thread: #b08a4f;
+  --vermilion: #c4553b;
+  --indigo-soft: #6b7c99;
 }
 
 html {
@@ -48,7 +69,34 @@ body {
 }
 
 ::selection {
-  background-color: rgba(129, 219, 153, 0.25);
+  background-color: rgba(176, 138, 79, 0.22);
+}
+
+/* Paper tooth. Sits over a band's flat color, never over content. */
+.paper-grain::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  opacity: 0.055;
+  mix-blend-mode: multiply;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='180' height='180' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+
+/* Hand-drawn strokes: uniform weight no matter how the SVG is scaled.
+   Only for unfilled, lightly-scaled art — `non-scaling-stroke` on large filled
+   paths stalls Blink's software rasterizer. */
+.ink-stroke {
+  vector-effect: non-scaling-stroke;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+/* Rounded ends without the vector-effect. Use on filled or heavily-scaled art;
+   strokes then scale with the drawing, which is what a real drawing does. */
+.ink-cap {
+  stroke-linecap: round;
+  stroke-linejoin: round;
 }
 
 @keyframes scroll-pulse {
@@ -60,5 +108,29 @@ body {
   50% {
     opacity: 1;
     transform: scaleY(1);
+  }
+}
+
+/* Leaves drift; culms breathe. Long, offset periods so it never reads as a loop. */
+@keyframes leaf-sway {
+  0%,
+  100% {
+    transform: rotate(-1.1deg);
+  }
+  50% {
+    transform: rotate(1.4deg);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
   }
 }

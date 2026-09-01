@@ -2,16 +2,19 @@
 
 import { MeshGradient } from "@paper-design/shaders-react";
 
-const COLORS = ["#fafafa", "#d5ffe7", "#c2eff2", "#fff2e3"];
+// Paper tones only — barely-there variation in the cream, so the ground looks
+// like a sheet catching light rather than a gradient. The old mint/cyan mix
+// fought the ink palette.
+const COLORS = ["#f4efe2", "#ece4d3", "#e9dfd4", "#eee7d8"];
 
 export function HeroShader() {
   return (
     <MeshGradient
       colors={COLORS}
-      speed={0.2}
-      distortion={0.9}
-      swirl={1.0}
-      grainMixer={0.04}
+      speed={0.14}
+      distortion={0.85}
+      swirl={0.9}
+      grainMixer={0.06}
       minPixelRatio={1}
       maxPixelCount={1920 * 1080}
       className="pointer-events-none absolute inset-0"

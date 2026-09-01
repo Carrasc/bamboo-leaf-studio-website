@@ -107,6 +107,16 @@
         "tagline": "Relaxing Music Maker",
         "description": "Turn touch into music. Tap anywhere to play harmonious notes over stunning real-time fluid simulations. No musical training required — just feel the sound."
       },
+      "konohanatei": {
+        "name": "Konohanatei",
+        "tagline": "Japanese Cafe & Restaurant",
+        "description": "A family-run Japanese kitchen in Mexico City serving home-style donburi, udon, curry and teishoku since 2004. Bilingual Spanish-Japanese site with the full menu, breakfast service and visiting details."
+      },
+      "carrasco-arquitectos": {
+        "name": "Carrasco Arquitectos",
+        "tagline": "Architecture Studio · B2B Project",
+        "description": "Site for a Mexico City architecture and construction firm with 40+ years and 60+ built projects. Presents five practice areas — residential, corporate, multi-family housing, cultural and aviation — through large-format project photography."
+      },
       "calculadora-aranceles": {
         "name": "Calculadora de Aranceles",
         "tagline": "CAM-SAM · B2B Project",

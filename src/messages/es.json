@@ -107,6 +107,16 @@
         "tagline": "Creador de Música Relajante",
         "description": "Convierte el toque en música. Toca en cualquier lugar para reproducir notas armoniosas sobre impresionantes simulaciones de fluidos en tiempo real. No se requiere entrenamiento musical — solo siente el sonido."
       },
+      "konohanatei": {
+        "name": "Konohanatei",
+        "tagline": "Café y Restaurante Japonés",
+        "description": "Una cocina japonesa familiar en la Ciudad de México, con donburi, udon, curry y teishoku hechos en casa desde 2004. Sitio bilingüe español-japonés con menú completo, servicio de desayunos y datos de visita."
+      },
+      "carrasco-arquitectos": {
+        "name": "Carrasco Arquitectos",
+        "tagline": "Estudio de Arquitectura · Proyecto B2B",
+        "description": "Sitio para un despacho de arquitectura y construcción en la Ciudad de México con más de 40 años y 60 obras. Presenta cinco áreas de práctica — residencial, corporativo, vivienda multifamiliar, cultural y aviación — con fotografía de gran formato."
+      },
       "calculadora-aranceles": {
         "name": "Calculadora de Aranceles",
         "tagline": "CAM-SAM · Proyecto B2B",

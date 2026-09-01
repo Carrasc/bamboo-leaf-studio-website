@@ -7,7 +7,10 @@ export const INSTAGRAM_URL = "https://www.instagram.com/bambooleafstudio/";
 export type PortfolioProject = {
   slug: string;
   href: string;
+  /** App icon, for the mobile projects. */
   image: string | null;
+  /** Screenshot of the site's own hero, for the web projects. */
+  banner: string | null;
   linkType: "appStore" | "website";
   tags: string[];
   gradient: string | null;
@@ -16,11 +19,22 @@ export type PortfolioProject = {
 
 export const portfolioProjects: PortfolioProject[] = [
   {
-    slug: "liquid-piano",
-    href: "https://apps.apple.com/us/app/liquid-piano/id6758108114",
-    image: "/images/liquid-piano-icon.png",
-    linkType: "appStore",
-    tags: ["iOS", "Music", "Free"],
+    slug: "konohanatei",
+    href: "https://konohanatei.vercel.app",
+    image: null,
+    banner: "/images/konohanatei-site.jpg",
+    linkType: "website",
+    tags: ["Web App", "Next.js", "Hospitality"],
+    gradient: null,
+    icon: null,
+  },
+  {
+    slug: "carrasco-arquitectos",
+    href: "https://carrasco-arquitectos.vercel.app",
+    image: null,
+    banner: "/images/carrasco-arquitectos-site.jpg",
+    linkType: "website",
+    tags: ["Web App", "Next.js", "B2B"],
     gradient: null,
     icon: null,
   },
@@ -28,15 +42,27 @@ export const portfolioProjects: PortfolioProject[] = [
     slug: "calculadora-aranceles",
     href: "https://calculadora-camsam.vercel.app",
     image: null,
+    banner: "/images/calculadora-aranceles-site.jpg",
     linkType: "website",
     tags: ["Web App", "Next.js", "B2B"],
-    gradient: "from-[#7AC279] to-[#4a9a49]",
-    icon: "calculator",
+    gradient: null,
+    icon: null,
+  },
+  {
+    slug: "liquid-piano",
+    href: "https://apps.apple.com/us/app/liquid-piano/id6758108114",
+    image: "/images/liquid-piano-icon.png",
+    banner: null,
+    linkType: "appStore",
+    tags: ["iOS", "Music", "Free"],
+    gradient: null,
+    icon: null,
   },
   {
     slug: "notegrid",
     href: "https://apps.apple.com/us/app/notegrid-play-music-by-ear/id6452839894",
     image: "/images/512x512.png",
+    banner: null,
     linkType: "appStore",
     tags: ["iOS", "Music", "B2B"],
     gradient: null,
@@ -46,6 +72,7 @@ export const portfolioProjects: PortfolioProject[] = [
     slug: "wimbo",
     href: "https://apps.apple.com/us/app/learn-music-wimbo-piano-tutor/id1630555349",
     image: "/images/WimboIcon180.png",
+    banner: null,
     linkType: "appStore",
     tags: ["iOS", "Music", "B2B"],
     gradient: null,
@@ -55,6 +82,7 @@ export const portfolioProjects: PortfolioProject[] = [
     slug: "tapmap",
     href: "https://apps.apple.com/mx/app/tapmap/id6738144322",
     image: null,
+    banner: null,
     linkType: "appStore",
     tags: ["iOS", "Education", "B2B"],
     gradient: "from-[#4A90D9] to-[#2B5EA7]",

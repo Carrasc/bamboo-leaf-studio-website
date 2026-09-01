@@ -46,10 +46,14 @@ export function MobileNav({
   return (
     <>
       <nav
-        className={`fixed left-0 top-0 z-[1000] w-full border-b transition-[background-color,border-color] duration-300 ${
+        // backdrop-filter is in the transition list and both states declare a
+        // blur, so the glass eases in with the background instead of snapping
+        // on ahead of it. Saturation is deliberately absent: boosting it on a
+        // warm cream ground flashes gold for the first frame.
+        className={`fixed left-0 top-0 z-[1000] w-full border-b transition-[background-color,border-color,backdrop-filter] duration-300 ${
           scrolled
-            ? "border-card-border/60 bg-surface/80 backdrop-blur-xl backdrop-saturate-[1.8]"
-            : "border-transparent bg-transparent"
+            ? "border-card-border/60 bg-surface/80 backdrop-blur-xl"
+            : "border-transparent bg-transparent backdrop-blur-[0px]"
         }`}
       >
         <div className="mx-auto flex h-16 max-w-[1200px] items-center justify-between px-6">

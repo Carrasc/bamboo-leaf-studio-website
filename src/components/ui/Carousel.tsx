@@ -146,7 +146,7 @@ export function Carousel({
         <button
           onClick={() => { goTo(currentIndex - 1); stopAutoplay(); startAutoplay(); }}
           disabled={currentIndex === 0}
-          className="flex h-10 w-10 items-center justify-center rounded-full bg-surface-alt text-muted transition-colors hover:bg-card-border hover:text-foreground disabled:cursor-default disabled:opacity-25"
+          className="flex h-10 w-10 items-center justify-center rounded-full border border-foreground/15 text-muted transition-colors hover:border-accent/50 hover:text-accent disabled:cursor-default disabled:opacity-25"
           aria-label={prevLabel}
         >
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="h-4 w-4">
@@ -160,7 +160,7 @@ export function Carousel({
               key={i}
               onClick={() => { goTo(i); stopAutoplay(); startAutoplay(); }}
               className={`h-2 rounded-full border-none transition-all ${
-                i === currentIndex ? "w-6 bg-accent" : "w-2 bg-card-border"
+                i === currentIndex ? "w-6 bg-accent" : "w-2 bg-foreground/20"
               }`}
               aria-label={`Go to slide ${i + 1} of ${dotCount}`}
             />
@@ -170,7 +170,7 @@ export function Carousel({
         <button
           onClick={() => { goTo(currentIndex + 1); stopAutoplay(); startAutoplay(); }}
           disabled={currentIndex >= maxIndex}
-          className="flex h-10 w-10 items-center justify-center rounded-full bg-surface-alt text-muted transition-colors hover:bg-card-border hover:text-foreground disabled:cursor-default disabled:opacity-25"
+          className="flex h-10 w-10 items-center justify-center rounded-full border border-foreground/15 text-muted transition-colors hover:border-accent/50 hover:text-accent disabled:cursor-default disabled:opacity-25"
           aria-label={nextLabel}
         >
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="h-4 w-4">

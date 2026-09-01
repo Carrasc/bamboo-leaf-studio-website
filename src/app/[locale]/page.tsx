@@ -7,6 +7,7 @@ import { Process } from "@/components/sections/Process";
 import { Portfolio } from "@/components/sections/Portfolio";
 import { Contact } from "@/components/sections/Contact";
 import { Footer } from "@/components/layout/Footer";
+import { ScrollThread } from "@/components/ui/ScrollThread";
 
 export default async function HomePage({
   params,
@@ -17,7 +18,12 @@ export default async function HomePage({
   setRequestLocale(locale);
 
   return (
-    <>
+    // The thread is a sibling of the sections, not a child of any one of them,
+    // so it can run the whole height of the document uninterrupted. It sits at
+    // z-5: above every section's flat background, below every text block
+    // (which carry `relative z-10`).
+    <div className="relative">
+      <ScrollThread />
       <Navbar />
       <main>
         <Hero />
@@ -28,6 +34,6 @@ export default async function HomePage({
         <Contact />
       </main>
       <Footer />
-    </>
+    </div>
   );
 }

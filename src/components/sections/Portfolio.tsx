@@ -1,6 +1,8 @@
 import Image from "next/image";
 import { getTranslations } from "next-intl/server";
 import { AnimateOnScroll } from "@/components/ui/AnimateOnScroll";
+import { Caption } from "@/components/ui/Caption";
+import { TornEdge } from "@/components/art/TornEdge";
 import { Carousel } from "@/components/ui/Carousel";
 import { portfolioProjects } from "@/lib/constants";
 import { Music } from "lucide-react";
@@ -87,56 +89,70 @@ export async function Portfolio() {
       href={project.href}
       target="_blank"
       rel="noopener noreferrer"
-      className="group flex h-full flex-col overflow-hidden rounded-2xl bg-card shadow-[0_1px_3px_rgba(0,0,0,0.04)] transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_12px_40px_rgba(0,0,0,0.08)]"
+      className="group flex h-full flex-col overflow-hidden rounded-sm border border-foreground/12 bg-card transition-all duration-500 hover:-translate-y-1.5 hover:border-accent/35 hover:shadow-[0_18px_44px_rgba(43,40,34,0.10)]"
     >
-      {/* Image / icon */}
-      <div className="flex justify-center bg-surface-alt px-6 py-8">
-        {project.image ? (
+      {/* Media. Web projects show their own hero header; app projects show
+          their icon on the blush ground. Both boxes are the same height so the
+          two kinds of card still read as one set. */}
+      {project.banner ? (
+        <div className="relative h-[200px] w-full overflow-hidden border-b border-foreground/10">
           <Image
-            src={project.image}
+            src={project.banner}
             alt={t(`projects.${project.slug}.name`)}
-            width={120}
-            height={120}
-            className="rounded-[26px] shadow-[0_8px_24px_rgba(0,0,0,0.12)]"
+            fill
+            sizes="(max-width: 768px) 100vw, 380px"
+            className="object-cover object-top transition-transform duration-700 group-hover:scale-[1.04]"
           />
-        ) : (
-          <div
-            className={`flex h-[120px] w-[120px] items-center justify-center rounded-[26px] bg-gradient-to-br ${project.gradient} text-white shadow-[0_8px_24px_rgba(0,0,0,0.12)]`}
-          >
-            {project.icon && placeholderIcons[project.icon]}
-          </div>
-        )}
-      </div>
+        </div>
+      ) : (
+        <div className="flex h-[200px] items-center justify-center border-b border-foreground/10 bg-surface-alt/60 px-6">
+          {project.image ? (
+            <Image
+              src={project.image}
+              alt={t(`projects.${project.slug}.name`)}
+              width={120}
+              height={120}
+              className="rounded-[26px] shadow-[0_10px_28px_rgba(43,40,34,0.18)]"
+            />
+          ) : (
+            <div
+              className={`flex h-[120px] w-[120px] items-center justify-center rounded-[26px] bg-gradient-to-br ${project.gradient} text-white shadow-[0_10px_28px_rgba(43,40,34,0.18)]`}
+            >
+              {project.icon && placeholderIcons[project.icon]}
+            </div>
+          )}
+        </div>
+      )}
 
       {/* Content */}
       <div className="flex flex-1 flex-col p-7">
         <div className="mb-4 flex items-start justify-between">
           <div>
-            <h3 className="text-lg font-semibold text-foreground">
+            <h3 className="text-lg font-semibold tracking-[-0.01em] text-foreground">
               {t(`projects.${project.slug}.name`)}
             </h3>
-            <p className="mt-0.5 text-sm text-muted">
+            <p className="mt-1 font-mono text-xs font-light text-muted">
               {t(`projects.${project.slug}.tagline`)}
             </p>
           </div>
-          <span className="ml-4 shrink-0 rounded-full bg-accent/10 px-3 py-1 text-[0.6875rem] font-semibold uppercase tracking-wide text-accent">
+          <span className="ml-4 shrink-0 rounded-full border border-accent/30 px-3 py-1 font-mono text-[0.6875rem] font-light lowercase text-accent">
             {t("badge_live")}
           </span>
         </div>
-        <p className="mb-5 text-sm leading-relaxed text-muted">
+        <p className="mb-5 text-sm leading-[1.8] text-muted">
           {t(`projects.${project.slug}.description`)}
         </p>
         <div className="mb-6 flex flex-wrap gap-2">
           {project.tags.map((tag) => (
             <span
               key={tag}
-              className="inline-block rounded-lg bg-surface-alt px-3 py-1.5 text-xs font-medium text-muted"
+              className="inline-block rounded-full border border-foreground/12 px-3 py-1.5 font-mono text-xs font-light lowercase text-muted"
             >
               {tag}
             </span>
           ))}
         </div>
-        <div className="mt-auto flex items-center gap-2 text-sm font-medium text-muted transition-colors group-hover:text-foreground">
+        <div className="mt-auto flex items-center gap-2 font-mono text-xs font-light lowercase text-muted transition-colors group-hover:text-accent">
           {project.linkType === "appStore" ? (
             <>
               <AppStoreIcon />
@@ -154,14 +170,17 @@ export async function Portfolio() {
   ));
 
   return (
-    <section id="portfolio" className="overflow-hidden bg-surface py-32 max-md:py-20">
-      <div className="mx-auto max-w-[1200px] px-6">
+    <section
+      id="portfolio"
+      className="paper-grain relative overflow-hidden bg-surface py-32 max-md:py-20"
+    >
+      <TornEdge fill="var(--surface)" variant={0} />
+
+      <div className="relative z-10 mx-auto max-w-[1200px] px-6">
         <AnimateOnScroll>
           <div className="mb-16">
-            <p className="mb-4 text-xs font-semibold uppercase tracking-[3px] text-accent">
-              {t("label")}
-            </p>
-            <h2 className="text-[clamp(2rem,4.5vw,3.25rem)] font-bold leading-[1.1] tracking-[-0.02em] text-foreground">
+            <Caption className="mb-6">{t("label")}</Caption>
+            <h2 className="text-[clamp(2rem,4.5vw,3.25rem)] font-light leading-[1.12] tracking-[-0.03em] text-foreground">
               {t("title")}
             </h2>
           </div>
