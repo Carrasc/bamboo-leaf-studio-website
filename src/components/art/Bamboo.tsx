@@ -20,7 +20,9 @@ const CULMS = [
  * `preserveAspectRatio="xMaxYMax meet"` pins the stand to the bottom-right of
  * whatever box it is given, so it always grows up out of the corner instead of
  * floating letterboxed in the middle. Leaves sway on long offset cycles; the
- * culms hold still.
+ * culms hold still — but only while the hero is on screen. Rotating a filled,
+ * heavily-scaled path invalidates its whole raster region every frame, so
+ * `.leaf-sway` parks itself whenever `HeroAmbient` marks the hero idle.
  */
 export function Bamboo({ className, count = 5 }: BambooProps) {
   return (
@@ -43,7 +45,7 @@ export function Bamboo({ className, count = 5 }: BambooProps) {
             />
             <path d={culm.nodes} className="ink-cap" strokeWidth={2.0 - depth * 0.8} />
             <g
-              className="origin-bottom motion-safe:animate-[leaf-sway_var(--dur)_ease-in-out_infinite]"
+              className="leaf-sway origin-bottom"
               style={
                 {
                   "--dur": `${11 + i * 2.7}s`,

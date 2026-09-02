@@ -61,8 +61,14 @@ export default async function LocaleLayout({
   setRequestLocale(locale);
   const messages = await getMessages();
 
+  // next/font emits a preload only for the fonts actually rendered, so leaving
+  // the Noto variable off en/es drops a font from their critical path. The
+  // `--font-sans` fallback in globals.css covers the now-undefined var.
+  const fontVars = [poppins.variable, plexMono.variable];
+  if (locale === "ja") fontVars.push(notoSansJP.variable);
+
   return (
-    <html lang={locale} className={`${poppins.variable} ${notoSansJP.variable} ${plexMono.variable}`}>
+    <html lang={locale} className={fontVars.join(" ")}>
       <head>
         {/* framer-motion renders these reveals at opacity:0 on the server. If
             JS never runs, the whole page below the hero would stay blank. */}

@@ -1,10 +1,13 @@
 @import "tailwindcss";
 
 @theme inline {
-  --font-sans: var(--font-poppins), var(--font-noto-sans-jp), -apple-system,
-    sans-serif;
-  --font-mono: var(--font-plex-mono), var(--font-noto-sans-jp), ui-monospace,
-    monospace;
+  /* The Noto fallback is only *loaded* on /ja — see `[locale]/layout.tsx`. The
+     var() fallback matters: an undefined custom property would invalidate the
+     entire font-family list on the other two locales, not just its own slot. */
+  --font-sans: var(--font-poppins), var(--font-noto-sans-jp, "Noto Sans JP"),
+    -apple-system, sans-serif;
+  --font-mono: var(--font-plex-mono), var(--font-noto-sans-jp, "Noto Sans JP"),
+    ui-monospace, monospace;
 
   --color-surface: var(--surface);
   --color-surface-alt: var(--surface-alt);
@@ -49,6 +52,14 @@
   --badge: #4e6742;
   --badge-border: rgba(78, 103, 66, 0.32);
   --bamboo: #4e6742;
+
+  /* The three paper tones the hero shader mixes, over the `surface` ground.
+     `.hero-wash` paints a static approximation of the shader from them. WebGL
+     uniforms cannot read a custom property, so HeroShader.tsx keeps the same
+     literals in its COLORS array — retune one and retune the other. */
+  --wash-1: #eee7d8;
+  --wash-2: #ece4d3;
+  --wash-3: #e9dfd4;
 
   /* The thread that runs the length of the page */
   --thread: #b08a4f;
@@ -99,6 +110,40 @@ body {
   stroke-linejoin: round;
 }
 
+/* Stands in for the hero shader: before its chunk loads, and permanently when
+   motion is reduced. Three soft radials in the same paper tones the MeshGradient
+   mixes, so the swap is a settling rather than a change of scene. */
+.hero-wash {
+  background:
+    radial-gradient(
+      58% 52% at 16% 20%,
+      var(--wash-1) 0%,
+      rgb(from var(--wash-1) r g b / 0) 70%
+    ),
+    radial-gradient(
+      54% 48% at 84% 28%,
+      var(--wash-2) 0%,
+      rgb(from var(--wash-2) r g b / 0) 72%
+    ),
+    radial-gradient(
+      68% 58% at 48% 90%,
+      var(--wash-3) 0%,
+      rgb(from var(--wash-3) r g b / 0) 75%
+    ),
+    var(--surface);
+}
+
+/* Leaves drift on long offset cycles. The rotation is on a filled, heavily
+   scaled path, so it re-rasterises its whole region every frame — `HeroAmbient`
+   parks it the moment the hero is off screen or the tab is hidden. */
+.leaf-sway {
+  animation: leaf-sway var(--dur) ease-in-out infinite;
+}
+
+[data-ambient="idle"] .leaf-sway {
+  animation-play-state: paused;
+}
+
 @keyframes scroll-pulse {
   0%,
   100% {
@@ -111,7 +156,6 @@ body {
   }
 }
 
-/* Leaves drift; culms breathe. Long, offset periods so it never reads as a loop. */
 @keyframes leaf-sway {
   0%,
   100% {
@@ -125,6 +169,9 @@ body {
 @media (prefers-reduced-motion: reduce) {
   html {
     scroll-behavior: auto;
+  }
+  .leaf-sway {
+    animation: none;
   }
   *,
   *::before,

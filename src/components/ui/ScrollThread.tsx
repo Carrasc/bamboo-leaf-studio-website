@@ -19,9 +19,13 @@ import { useEffect, useState } from "react";
 const THREAD =
   "M50 0 C 50 40, 62 70, 61 104 C 60 150, 34 176, 33 220 C 32 268, 63 292, 64 338 C 65 388, 36 410, 35 452 C 34 500, 60 522, 60 566 C 60 612, 38 634, 38 680 C 38 726, 62 748, 62 794 C 62 838, 44 858, 46 898 C 47 936, 50 966, 50 1000";
 
+// Matches the `max-lg:hidden` below. Below this width the thread is
+// display:none, and driving a spring into a path nobody can see is pure cost.
+const DESKTOP = "(min-width: 1024px)";
+
 export function ScrollThread() {
   const prefersReduced = useReducedMotion();
-  const [mounted, setMounted] = useState(false);
+  const [onDesktop, setOnDesktop] = useState(false);
   const { scrollYProgress } = useScroll();
 
   // Trails the scroll slightly so the line feels drawn by hand, not scrubbed.
@@ -31,11 +35,22 @@ export function ScrollThread() {
     restDelta: 0.001,
   });
 
-  useEffect(() => setMounted(true), []);
+  // Doubles as the mounted flag: false on the server and on the first client
+  // render, so hydration always matches, then true only where the thread is
+  // actually painted.
+  useEffect(() => {
+    const query = window.matchMedia(DESKTOP);
+    function sync() {
+      setOnDesktop(query.matches);
+    }
+    sync();
+    query.addEventListener("change", sync);
+    return () => query.removeEventListener("change", sync);
+  }, []);
 
   // Server and pre-hydration render the thread complete. Only once we know we
   // are on the client (and motion is welcome) do we hand length over to scroll.
-  const animate = mounted && !prefersReduced;
+  const animate = onDesktop && !prefersReduced;
 
   return (
     <div

@@ -1,6 +1,6 @@
 import { getTranslations } from "next-intl/server";
 import { RotatingWords } from "@/components/ui/RotatingWords";
-import { HeroShader } from "@/components/ui/HeroShader";
+import { HeroAmbient } from "@/components/ui/HeroAmbient";
 import { Caption } from "@/components/ui/Caption";
 import { Bamboo } from "@/components/art/Bamboo";
 import { Asterisk, Hanko } from "@/components/art/Marks";
@@ -16,14 +16,18 @@ export async function Hero() {
       id="hero"
       className="paper-grain relative flex min-h-screen items-center overflow-hidden bg-surface"
     >
-      <HeroShader />
-
-      {/* The stand the studio is named for. Anchored to the baseline, drifting
-          off the right edge so it reads as a fragment of something larger. */}
-      <Bamboo
-        className="absolute bottom-0 right-0 h-[82vh] w-[46vw] opacity-70 max-lg:h-[46vh] max-lg:w-[76vw] max-lg:opacity-30"
-        count={5}
-      />
+      {/* Everything that moves in the hero lives inside HeroAmbient, which
+          stops all of it the moment the hero leaves the viewport. The wrapper
+          is `inset-0` on the section, so the bamboo still resolves its
+          bottom-right anchor against exactly the box it did before. */}
+      <HeroAmbient>
+        {/* The stand the studio is named for. Anchored to the baseline, drifting
+            off the right edge so it reads as a fragment of something larger. */}
+        <Bamboo
+          className="absolute bottom-0 right-0 h-[82vh] w-[46vw] opacity-70 max-lg:h-[46vh] max-lg:w-[76vw] max-lg:opacity-30"
+          count={5}
+        />
+      </HeroAmbient>
 
       <div className="relative z-10 mx-auto w-full max-w-[1200px] px-6 py-40 max-md:py-28">
         <div className="max-w-[720px]">
