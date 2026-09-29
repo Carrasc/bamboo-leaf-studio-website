@@ -98,9 +98,31 @@
   "portfolio": {
     "label": "Nuestro Trabajo",
     "title": "Portafolio",
-    "badge_live": "Activo",
-    "link_app_store": "Descargar en la App Store",
-    "link_website": "Visitar Sitio Web",
+    "picker_label": "Proyectos",
+    "kinds": {
+      "website": "Sitio web",
+      "web_app": "App web",
+      "ios": "App iOS"
+    },
+    "cta": {
+      "website": "Visitar sitio web",
+      "web_app": "Abrir la app web",
+      "ios": "Ver en la App Store"
+    },
+    "tags": {
+      "nextjs": "Next.js",
+      "ios": "iOS",
+      "hospitality": "Restaurantes",
+      "b2b": "B2B",
+      "music": "Música",
+      "education": "Educación",
+      "free": "Gratis"
+    },
+    "stats": {
+      "downloads": "descargas",
+      "ratings": "{count, plural, one {# calificación} other {# calificaciones}}",
+      "rated": "Calificación de {rating} de 5"
+    },
     "projects": {
       "liquid-piano": {
         "name": "Liquid Piano",

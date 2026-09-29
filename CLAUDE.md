@@ -116,19 +116,49 @@ Two stroke classes, and picking the wrong one is a real bug:
   scaled from a 400×300 viewBox to 46vw×82vh) stalls Blink's rasterizer hard
   enough to paint a blank page. That cost an afternoon; don't rediscover it.
 
-## Portfolio cards
+## Portfolio stage
 
-Two kinds of project, one card shape. `PortfolioProject` carries both `image`
-(app icon) and `banner` (screenshot of the site's own hero):
+Portfolio sits right after About — it's the section that sells the studio.
+It's a picker + stage (`PortfolioStage.tsx`, client): a list of projects on the
+left, one tinted plate on the right showing the selected project in a device
+frame, caption below. `Portfolio.tsx` resolves every string on the server and
+passes plain props down.
 
-- **Web projects** set `banner` and leave `image`/`gradient`/`icon` null. The
-  card shows the real site header, full-bleed, `object-cover object-top`.
-- **App projects** set `image` (or `gradient` + `icon` as a fallback). The card
-  shows a 120px icon centred on the blush ground.
+`PortfolioProject` is `kind` (`website` | `web_app` | `ios`), one `image`, and
+a `tint`:
 
-Both media boxes are a fixed `h-[200px]`, which is what keeps the two kinds
-reading as one set. Banners live in `public/images/<slug>-site.jpg`, captured at
-1440×900 and cropped to 1.75:1 at 1000px wide.
+- **Web kinds** — `image` is the site's own hero, shown in a paper browser
+  frame. Banners live in `public/images/<slug>-site.jpg`, captured at 1440×900
+  and cropped to 1.75:1 at 1000px wide.
+- **iOS** — `image` is the real App Store icon (`<slug>-icon.png`, 512px, from
+  the iTunes lookup API's `artworkUrl512`), centred on an ink-bezel phone.
+- `tint` is sampled from the project's own art. It is data, not a token: only
+  mixed 12% into `card` for the plate wash and used for the picker dot, never
+  for text.
+
+App plates carry stats either side of the phone: `downloads` (left, from App
+Store Connect — Apple doesn't publish them) and `rating` (right, an iTunes
+lookup snapshot). A rating shows only at `MIN_RATINGS` (10) or more, so a lone
+5.0 never passes for a reputation. Numbers go through next-intl's formatter
+(200K+ / 20万+). Refresh the snapshot by hand; it is not fetched at runtime.
+
+Tags and kind/CTA labels are message keys (`portfolio.tags`, `.kinds`, `.cta`).
+
+Motion: the picker's pill is one framer `layoutId` element on a zero-bounce
+spring; device and caption swap through `AnimatePresence` with the direction of
+travel as `custom`. Every caption is also laid out invisibly in the same grid
+cell so the block's height never changes on a switch. Images for all projects
+are warmed once the section is near, via `getImageProps` with the same `sizes`
+the frames use — change one `sizes` and the cache misses.
+
+Both device frames are sized by the plate's *height* and take their width
+from their own ratio. The plate is a short 16:9 so the list and the whole stage
+(plate, caption, tags, CTA) fit one laptop viewport side by side — that's why
+nothing is sticky. Don't grow the plate back toward square without re-checking
+1280×800.
+
+The picker is WAI-ARIA tabs (roving `tabIndex`, arrows/Home/End). Below `md`
+it becomes a horizontal chip strip above the plate.
 
 **Replacing a banner in place needs a cache clear.** Next's image optimizer keys
 on the source path, so overwriting `public/images/foo.jpg` keeps serving the old
@@ -143,7 +173,7 @@ crop until you `rm -rf .next/cache/images`.
 - **Hydration rule:** never call `motion.create()` inside a render function.
   Use the static `motionTag` map in `AnimateOnScroll.tsx`.
 - Client components depending on viewport or time must render an SSR-stable
-  first paint, then correct in `useEffect` (see `Carousel`, `RotatingWords`).
+  first paint, then correct in `useEffect` (see `RotatingWords`).
 - `AnimateOnScroll` ships `opacity:0` in the SSR HTML, so every reveal carries
   `data-reveal` and a `<noscript>` rule in the locale layout forces them
   visible. Any new reveal mechanism needs the same escape hatch.

@@ -98,9 +98,31 @@
   "portfolio": {
     "label": "実績紹介",
     "title": "ポートフォリオ",
-    "badge_live": "公開中",
-    "link_app_store": "App Storeでダウンロード",
-    "link_website": "ウェブサイトを見る",
+    "picker_label": "プロジェクト",
+    "kinds": {
+      "website": "ウェブサイト",
+      "web_app": "ウェブアプリ",
+      "ios": "iOSアプリ"
+    },
+    "cta": {
+      "website": "ウェブサイトを見る",
+      "web_app": "ウェブアプリを開く",
+      "ios": "App Storeで見る"
+    },
+    "tags": {
+      "nextjs": "Next.js",
+      "ios": "iOS",
+      "hospitality": "飲食",
+      "b2b": "B2B",
+      "music": "音楽",
+      "education": "教育",
+      "free": "無料"
+    },
+    "stats": {
+      "downloads": "ダウンロード",
+      "ratings": "{count}件の評価",
+      "rated": "5点中{rating}点"
+    },
     "projects": {
       "liquid-piano": {
         "name": "Liquid Piano",

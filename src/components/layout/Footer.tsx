@@ -38,10 +38,10 @@ export async function Footer() {
                 {t("nav.about")}
               </a>
               <a
-                href="#services"
+                href="#portfolio"
                 className="w-fit text-sm font-light text-muted transition-colors hover:text-accent"
               >
-                {t("nav.services")}
+                {t("nav.work")}
               </a>
               <a
                 href="#process"
@@ -50,10 +50,10 @@ export async function Footer() {
                 {t("nav.process")}
               </a>
               <a
-                href="#portfolio"
+                href="#services"
                 className="w-fit text-sm font-light text-muted transition-colors hover:text-accent"
               >
-                {t("nav.work")}
+                {t("nav.services")}
               </a>
               <a
                 href="#contact"

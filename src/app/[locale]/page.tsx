@@ -2,9 +2,9 @@ import { setRequestLocale } from "next-intl/server";
 import { Navbar } from "@/components/layout/Navbar";
 import { Hero } from "@/components/sections/Hero";
 import { About } from "@/components/sections/About";
-import { Services } from "@/components/sections/Services";
-import { Process } from "@/components/sections/Process";
 import { Portfolio } from "@/components/sections/Portfolio";
+import { Process } from "@/components/sections/Process";
+import { Services } from "@/components/sections/Services";
 import { Contact } from "@/components/sections/Contact";
 import { Footer } from "@/components/layout/Footer";
 import { ScrollThread } from "@/components/ui/ScrollThread";
@@ -28,9 +28,9 @@ export default async function HomePage({
       <main>
         <Hero />
         <About />
-        <Services />
-        <Process />
         <Portfolio />
+        <Process />
+        <Services />
         <Contact />
       </main>
       <Footer />

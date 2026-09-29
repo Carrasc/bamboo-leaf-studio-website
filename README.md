@@ -34,7 +34,7 @@ src/
 ├── components/
 │   ├── layout/          # Navbar, MobileNav, Footer
 │   ├── sections/        # Hero, About, Services, Process, Portfolio, Contact
-│   ├── ui/              # Carousel, ThemeToggle, LanguageSwitcher, AnimateOnScroll
+│   ├── ui/              # PortfolioStage, LanguageSwitcher, AnimateOnScroll
 │   └── providers/       # ThemeProvider
 ├── i18n/                # next-intl routing and request config
 ├── messages/            # Translation JSON files (en, es, ja)
